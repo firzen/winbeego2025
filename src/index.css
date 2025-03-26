@@ -16,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 210 100% 30%;
+    --primary: 0 0% 0%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -36,12 +36,14 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.75rem;
+
+    --beewin-gold: 45 100% 60%;
   }
 }
 
 @layer base {
   * {
-    @apply border-border selection:bg-logistics-500/20 selection:text-logistics-900;
+    @apply border-border selection:bg-beewin-gold/20 selection:text-black;
   }
 
   body {
@@ -63,7 +65,7 @@
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-logistics-700 to-logistics-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-black to-beewin-gold bg-clip-text text-transparent;
   }
 }
 

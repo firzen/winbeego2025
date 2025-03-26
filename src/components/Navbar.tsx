@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { Package, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,10 +24,13 @@ const Navbar = () => {
       <div className="container px-4 mx-auto flex items-center justify-between">
         <a 
           href="#" 
-          className="flex items-center gap-2 text-logistics-800 transition-opacity hover:opacity-80"
+          className="flex items-center gap-2 text-black transition-opacity hover:opacity-80"
         >
-          <Package className="h-6 w-6" />
-          <span className="font-semibold text-xl">FreightNexus</span>
+          <img 
+            src="/lovable-uploads/2d9e3aa8-89db-4cfc-aef8-25ae2a469f3d.png" 
+            alt="BEEWIN Logo" 
+            className="h-10" 
+          />
         </a>
         
         {/* Desktop Navigation */}
@@ -36,14 +39,14 @@ const Navbar = () => {
             <a
               key={index}
               href={`#${item === "首页" ? "hero" : item}`}
-              className="text-gray-600 hover:text-logistics-700 transition-colors text-sm font-medium relative py-2 px-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-logistics-500 after:transition-all hover:after:w-full"
+              className="text-gray-800 hover:text-beewin-gold transition-colors text-sm font-medium relative py-2 px-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-beewin-gold after:transition-all hover:after:w-full"
             >
               {item}
             </a>
           ))}
           <a
             href="#contact"
-            className="bg-logistics-600 hover:bg-logistics-700 text-white px-5 py-2 rounded-lg text-sm font-medium transition-colors"
+            className="bg-beewin-gold hover:bg-beewin-gold/80 text-black px-5 py-2 rounded-lg text-sm font-medium transition-colors"
           >
             获取报价
           </a>
@@ -51,7 +54,7 @@ const Navbar = () => {
         
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-gray-700 p-2"
+          className="md:hidden text-gray-800 p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X /> : <Menu />}
@@ -64,12 +67,15 @@ const Navbar = () => {
         )}>
           <div className="flex flex-col h-full p-8">
             <div className="flex justify-between items-center mb-8">
-              <a href="#" className="flex items-center gap-2 text-logistics-800">
-                <Package className="h-6 w-6" />
-                <span className="font-semibold text-xl">FreightNexus</span>
+              <a href="#" className="flex items-center gap-2 text-black">
+                <img 
+                  src="/lovable-uploads/2d9e3aa8-89db-4cfc-aef8-25ae2a469f3d.png" 
+                  alt="BEEWIN Logo" 
+                  className="h-10" 
+                />
               </a>
               <button 
-                className="text-gray-700 p-2"
+                className="text-gray-800 p-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <X />
@@ -81,7 +87,7 @@ const Navbar = () => {
                 <a
                   key={index}
                   href={`#${item === "首页" ? "hero" : item}`}
-                  className="text-gray-600 hover:text-logistics-700 transition-colors text-lg font-medium"
+                  className="text-gray-800 hover:text-beewin-gold transition-colors text-lg font-medium"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item}
@@ -89,7 +95,7 @@ const Navbar = () => {
               ))}
               <a
                 href="#contact"
-                className="bg-logistics-600 hover:bg-logistics-700 text-white px-5 py-3 rounded-lg text-lg font-medium transition-colors mt-4 text-center"
+                className="bg-beewin-gold hover:bg-beewin-gold/80 text-black px-5 py-3 rounded-lg text-lg font-medium transition-colors mt-4 text-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 获取报价

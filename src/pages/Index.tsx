@@ -24,6 +24,9 @@ const Index = () => {
     const elements = document.querySelectorAll(".section-fade-in");
     elements.forEach((el) => observer.observe(el));
     
+    // Update document title
+    document.title = "BEEWIN - 专业物流解决方案";
+    
     return () => {
       elements.forEach((el) => observer.unobserve(el));
     };

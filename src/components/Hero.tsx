@@ -31,21 +31,21 @@ const Hero = () => {
     <section id="hero" className="relative pt-32 pb-20 md:pb-32 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-logistics-100 rounded-bl-[100px] opacity-80" />
-        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-logistics-50 rounded-tr-[100px] opacity-80" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-logistics-100 rounded-full blur-3xl opacity-30" />
+        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-beewin-gold/10 rounded-bl-[100px] opacity-80" />
+        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-gray-100 rounded-tr-[100px] opacity-80" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-beewin-gold/5 rounded-full blur-3xl opacity-30" />
       </div>
       
       <div 
         ref={heroRef}
         className="container px-4 mx-auto flex flex-col items-center text-center transition-opacity duration-1000 ease-out opacity-0"
       >
-        <span className="px-4 py-2 bg-logistics-100 text-logistics-800 rounded-full text-sm font-medium mb-6 animate-fade-down">
+        <span className="px-4 py-2 bg-black/5 text-black rounded-full text-sm font-medium mb-6 animate-fade-down">
           专业的物流解决方案提供商
         </span>
         
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 max-w-4xl leading-tight animate-fade-up">
-          高效、<span className="text-gradient">可靠</span>的全球物流服务
+          高效、<span className="text-beewin-gold">可靠</span>的全球物流服务
         </h1>
         
         <p className="text-lg text-gray-600 mb-8 max-w-2xl animate-fade-up" style={{ animationDelay: "0.1s" }}>
@@ -55,14 +55,14 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-up" style={{ animationDelay: "0.2s" }}>
           <a 
             href="#contact" 
-            className="bg-logistics-600 hover:bg-logistics-700 text-white px-8 py-3 rounded-lg font-medium transition-all hover:shadow-lg flex items-center justify-center gap-2 group"
+            className="bg-black hover:bg-black/80 text-white px-8 py-3 rounded-lg font-medium transition-all hover:shadow-lg flex items-center justify-center gap-2 group"
           >
             立即咨询
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </a>
           <a 
             href="#services" 
-            className="bg-white hover:bg-gray-50 text-logistics-800 border border-gray-200 px-8 py-3 rounded-lg font-medium transition-all hover:shadow-md"
+            className="bg-beewin-gold hover:bg-beewin-gold/80 text-black border border-beewin-gold/20 px-8 py-3 rounded-lg font-medium transition-all hover:shadow-md"
           >
             了解服务
           </a>
@@ -74,8 +74,8 @@ const Hero = () => {
             { icon: Truck, title: "专业物流车队", description: "安全高效的货物运输" },
             { icon: Route, title: "最优路线规划", description: "智能化路线设计与优化" }
           ].map((item, index) => (
-            <div key={index} className="glass p-6 rounded-2xl animated-card">
-              <div className="w-12 h-12 flex items-center justify-center bg-logistics-100 rounded-xl mb-4 text-logistics-700">
+            <div key={index} className="glass p-6 rounded-2xl animated-card border border-gray-100">
+              <div className="w-12 h-12 flex items-center justify-center bg-beewin-gold/10 rounded-xl mb-4 text-beewin-gold">
                 <item.icon className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-semibold mb-2 text-gray-800">{item.title}</h3>

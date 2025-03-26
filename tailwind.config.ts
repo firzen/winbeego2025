@@ -69,6 +69,7 @@ export default {
 					900: "#0b446f",
 					950: "#072b4a",
 				},
+				"beewin-gold": "hsl(var(--beewin-gold))",
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
