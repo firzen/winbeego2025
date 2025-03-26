@@ -226,7 +226,7 @@ const Contact = () => {
                 <h4 className="font-medium mb-4">全球分支机构</h4>
                 <div className="grid grid-cols-2 gap-3 text-sm">
                   <div className="flex items-center px-3 py-2 bg-white/10 rounded-lg">
-                    <span>北京</span>
+                    <span>上海</span>
                   </div>
                   <div className="flex items-center px-3 py-2 bg-white/10 rounded-lg">
                     <span>广州</span>
@@ -238,7 +238,7 @@ const Contact = () => {
                     <span>香港</span>
                   </div>
                   <div className="flex items-center px-3 py-2 bg-white/10 rounded-lg">
-                    <span>新加坡</span>
+                    <span>成都</span>
                   </div>
                   <div className="flex items-center px-3 py-2 bg-white/10 rounded-lg">
                     <span>纽约</span>
