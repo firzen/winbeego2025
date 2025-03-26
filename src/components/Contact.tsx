@@ -216,8 +216,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">总部地址</h4>
-                    <p className="text-logistics-100">上海市浦东新区世纪大道100号</p>
-                    <p className="text-sm text-logistics-300 mt-1">环球金融中心15楼</p>
+                    <p className="text-logistics-100">广州市黄埔区鱼珠AI智慧港</p>
+                    <p className="text-sm text-logistics-300 mt-1">西塔B220</p>
                   </div>
                 </div>
               </div>

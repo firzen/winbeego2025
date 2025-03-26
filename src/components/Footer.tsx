@@ -79,7 +79,7 @@ const Footer = () => {
             <h3 className="font-semibold text-lg mb-5">联系我们</h3>
             <ul className="space-y-3 text-gray-400">
               <li>
-                上海市浦东新区世纪大道100号环球金融中心15楼
+                广州市黄埔区鱼珠AI智慧港西塔B220
               </li>
               <li>
                 <a href="mailto:info@winbeego.com" className="hover:text-white transition-colors">
