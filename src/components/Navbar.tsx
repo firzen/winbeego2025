@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
@@ -28,9 +27,10 @@ const Navbar = () => {
         >
           <img 
             src="/lovable-uploads/2d9e3aa8-89db-4cfc-aef8-25ae2a469f3d.png" 
-            alt="BEEWIN Logo" 
+            alt="翼蜂行 Logo" 
             className="h-10" 
           />
+          <span className="font-bold text-xl">翼蜂行</span>
         </a>
         
         {/* Desktop Navigation */}
@@ -70,9 +70,10 @@ const Navbar = () => {
               <a href="#" className="flex items-center gap-2 text-black">
                 <img 
                   src="/lovable-uploads/2d9e3aa8-89db-4cfc-aef8-25ae2a469f3d.png" 
-                  alt="BEEWIN Logo" 
+                  alt="翼蜂行 Logo" 
                   className="h-10" 
                 />
+                <span className="font-bold text-xl">翼蜂行</span>
               </a>
               <button 
                 className="text-gray-800 p-2"

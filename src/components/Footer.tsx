@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Package, ArrowUp } from "lucide-react";
 
@@ -17,10 +16,10 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-5">
               <Package className="h-6 w-6" />
-              <span className="font-bold text-xl">FreightNexus</span>
+              <span className="font-bold text-xl">翼蜂行</span>
             </div>
             <p className="text-gray-400 mb-6">
-              专业的物流解决方案提供商，为全球客户提供高效、可靠的物流服务。
+              翼蜂行：专业的物流解决方案提供商，为全球客户提供高效、可靠的物流服务。
             </p>
             <div className="flex gap-4">
               {["facebook", "twitter", "linkedin", "instagram"].map((social) => (
@@ -98,7 +97,7 @@ const Footer = () => {
         
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} FreightNexus. 保留所有权利。
+            © {new Date().getFullYear()} 翼蜂行. 保留所有权利。 | winbeego.com
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-gray-500 hover:text-white text-sm transition-colors">
