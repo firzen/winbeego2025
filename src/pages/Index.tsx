@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -9,7 +8,6 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   useEffect(() => {
-    // 现有的 Intersection Observer 代码
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -24,7 +22,6 @@ const Index = () => {
     const elements = document.querySelectorAll(".section-fade-in");
     elements.forEach((el) => observer.observe(el));
     
-    // 更新文档标题
     document.title = "翼蜂行 - 专业物流解决方案";
     
     return () => {

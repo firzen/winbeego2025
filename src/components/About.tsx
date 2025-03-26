@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { ArrowRight, Check } from "lucide-react";
 
@@ -44,13 +43,13 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="order-2 lg:order-1 section-fade-in">
             <span className="px-4 py-2 bg-logistics-100 text-logistics-800 rounded-full text-sm font-medium mb-4 inline-block">
-              关于FreightNexus
+              关于翼蜂行
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
               您值得信赖的<span className="text-gradient">物流合作伙伴</span>
             </h2>
             <p className="text-gray-600 mb-8 text-lg">
-              FreightNexus创立于2010年，是一家专注于提供综合物流解决方案的国际企业。十余年来，我们不断创新服务模式，优化物流网络，致力于为客户打造高效、可靠、透明的物流体验。
+              翼蜂行创立于2010年，是一家专注于提供综合物流解决方案的国际企业。十余年来，我们不断创新服务模式，优化物流网络，致力于为客户打造高效、可靠、透明的物流体验。
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 mb-8">
