@@ -49,7 +49,7 @@ const Hero = () => {
         </h1>
         
         <p className="text-lg text-gray-600 mb-8 max-w-2xl animate-fade-up" style={{ animationDelay: "0.1s" }}>
-          我们提供端到端的物流解决方案，从仓储、运输到全程追踪，满足您的所有物流需求。
+          我们提供端到端的专业物流解决方案，全程追踪，满足您的所有物流需求。
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-up" style={{ animationDelay: "0.2s" }}>
