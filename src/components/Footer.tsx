@@ -82,13 +82,8 @@ const Footer = () => {
                 上海市浦东新区世纪大道100号环球金融中心15楼
               </li>
               <li>
-                <a href="tel:+86-400-123-4567" className="hover:text-white transition-colors">
-                  +86 400-123-4567
-                </a>
-              </li>
-              <li>
-                <a href="mailto:info@freightnexus.com" className="hover:text-white transition-colors">
-                  info@freightnexus.com
+                <a href="mailto:info@winbeego.com" className="hover:text-white transition-colors">
+                  info@winbeego.com
                 </a>
               </li>
             </ul>

@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from "react";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -202,22 +201,11 @@ const Contact = () => {
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 mt-1">
-                    <Phone className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium mb-1">电话咨询</h4>
-                    <p className="text-logistics-100">+86 400-123-4567</p>
-                    <p className="text-sm text-logistics-300 mt-1">周一至周五, 9:00 - 18:00</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 mt-1">
                     <Mail className="h-5 w-5" />
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">邮箱咨询</h4>
-                    <p className="text-logistics-100">info@freightnexus.com</p>
+                    <p className="text-logistics-100">info@winbeego.com</p>
                     <p className="text-sm text-logistics-300 mt-1">全天候服务，我们会尽快回复</p>
                   </div>
                 </div>
