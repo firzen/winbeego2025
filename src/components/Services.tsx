@@ -27,7 +27,7 @@ const Services = () => {
 
   const services = [
     {
-      icon: Truck,
+      icon: Box,
       title: "国际海运服务",
       description: "提供集装箱运输、散货运输、滚装运输等多种海运方式，满足不同类型货物的运输需求。",
       color: "bg-blue-100 text-blue-700"
@@ -39,7 +39,7 @@ const Services = () => {
       color: "bg-amber-100 text-amber-700"
     },
     {
-      icon: Box,
+      icon: Truck,
       title: "仓储与配送",
       description: "提供专业的仓储管理、库存控制、订单处理和配送服务，优化您的供应链。",
       color: "bg-green-100 text-green-700"
