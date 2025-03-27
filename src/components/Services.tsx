@@ -53,7 +53,7 @@ const Services = () => {
     {
       icon: Calendar,
       title: "行李回家",
-      description: "无需繁琐资料和身板手续，为放假回国，商务返回等提供最便捷的行李承运服务，轻松回家。",
+      description: "无需繁琐资料和申办手续，为放假回国，商务返回等提供最便捷的行李承运服务，轻松回家。",
       color: "bg-red-100 text-red-700"
     },
     {
