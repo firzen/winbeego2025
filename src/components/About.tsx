@@ -78,13 +78,9 @@ const About = () => {
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl">
               <AspectRatio ratio={4/3} className="bg-white">
                 <img 
-                  src="/images/logistics-company-image.jpg" 
+                  src="https://images.unsplash.com/photo-1566193232352-b10a670eda5b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" 
                   alt="翼蜂行物流全球运输服务" 
                   className="object-cover w-full h-full"
-                  onError={(e) => {
-                    e.currentTarget.src = "https://images.unsplash.com/photo-1566193232352-b10a670eda5b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3";
-                    e.currentTarget.onerror = null; // Prevents infinite loop if fallback also fails
-                  }}
                 />
               </AspectRatio>
             </div>
