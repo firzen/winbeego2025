@@ -52,8 +52,8 @@ const Services = () => {
     },
     {
       icon: Calendar,
-      title: "项目物流服务",
-      description: "为大型工程和项目提供定制化物流方案，包括超大件运输和特殊货物处理。",
+      title: "行李回家",
+      description: "无需繁琐资料和身板手续，为放假回国，商务返回等提供最便捷的行李承运服务，轻松回家。",
       color: "bg-red-100 text-red-700"
     },
     {
