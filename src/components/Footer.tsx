@@ -94,10 +94,6 @@ const Footer = () => {
                     alt="WBG行李回家专家 WhatsApp 联系人" 
                     className="w-32 h-auto"
                   />
-                  <div className="text-center mt-2">
-                    <p className="text-black font-semibold text-sm">WBG行李回家专家</p>
-                    <p className="text-gray-500 text-xs">WhatsApp 联系人</p>
-                  </div>
                 </div>
               </li>
             </ul>
