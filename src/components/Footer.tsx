@@ -64,7 +64,6 @@ const Footer = () => {
                 "发展历程",
                 "企业文化",
                 "核心优势",
-                "新闻动态",
                 "加入我们"
               ].map((item, index) => (
                 <li key={index}>
