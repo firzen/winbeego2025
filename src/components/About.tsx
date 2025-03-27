@@ -1,5 +1,7 @@
+
 import React, { useEffect } from "react";
 import { ArrowRight, Check } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const About = () => {
   useEffect(() => {
@@ -74,10 +76,17 @@ const About = () => {
           
           <div className="order-1 lg:order-2 relative section-fade-in">
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl">
-              <div className="aspect-[4/3] bg-logistics-200 w-full"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-logistics-800 text-lg font-medium">企业形象图片</span>
-              </div>
+              <AspectRatio ratio={4/3} className="bg-white">
+                <img 
+                  src="/images/logistics-company-image.jpg" 
+                  alt="翼蜂行物流全球运输服务" 
+                  className="object-cover w-full h-full"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1566193232352-b10a670eda5b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3";
+                    e.currentTarget.onerror = null; // Prevents infinite loop if fallback also fails
+                  }}
+                />
+              </AspectRatio>
             </div>
             <div className="absolute top-8 -right-8 w-64 h-64 bg-logistics-100 rounded-full -z-10 blur-lg opacity-80"></div>
             <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-logistics-50 rounded-full -z-10 blur-md opacity-80"></div>
