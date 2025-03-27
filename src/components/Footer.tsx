@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Package, ArrowUp } from "lucide-react";
 
@@ -85,6 +86,19 @@ const Footer = () => {
                 <a href="mailto:info@winbeego.com" className="hover:text-white transition-colors">
                   info@winbeego.com
                 </a>
+              </li>
+              <li className="pt-2">
+                <div className="flex flex-col items-center bg-white p-3 rounded-lg">
+                  <img 
+                    src="/lovable-uploads/4e4b1a4b-32d2-4066-9a54-8952b1772cfd.png" 
+                    alt="WBG行李回家专家 WhatsApp 联系人" 
+                    className="w-32 h-auto"
+                  />
+                  <div className="text-center mt-2">
+                    <p className="text-black font-semibold text-sm">WBG行李回家专家</p>
+                    <p className="text-gray-500 text-xs">WhatsApp 联系人</p>
+                  </div>
+                </div>
               </li>
             </ul>
           </div>
