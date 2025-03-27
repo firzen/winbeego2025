@@ -49,7 +49,7 @@ const About = () => {
               您值得信赖的<span className="text-gradient">物流合作伙伴</span>
             </h2>
             <p className="text-gray-600 mb-8 text-lg">
-              翼蜂行创立于2010年，是一家专注于提供综合物流解决方案的国际企业。十余年来，我们不断创新服务模式，优化物流网络，致力于为客户打造高效、可靠、透明的物流体验。
+              翼蜂行是一家专注于提供综合物流解决方案的国际企业。十余年来，我们不断创新服务模式，优化物流网络，致力于为客户打造高效、可靠、透明的物流体验。
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 mb-8">

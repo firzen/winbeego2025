@@ -235,10 +235,10 @@ const Contact = () => {
                     <span>深圳</span>
                   </div>
                   <div className="flex items-center px-3 py-2 bg-white/10 rounded-lg">
-                    <span>香港</span>
+                    <span>成都</span>
                   </div>
                   <div className="flex items-center px-3 py-2 bg-white/10 rounded-lg">
-                    <span>成都</span>
+                    <span>香港</span>
                   </div>
                   <div className="flex items-center px-3 py-2 bg-white/10 rounded-lg">
                     <span>纽约</span>
