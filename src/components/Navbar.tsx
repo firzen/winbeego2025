@@ -94,7 +94,6 @@ const Navbar = () => {
                   {item}
                 </a>
               ))}
-              <a href="/track" className="text-gray-800 hover:text-beewin-gold transition-colors text-lg font-medium">轨迹跟踪</a>
               <a
                 href="#contact"
                 className="bg-beewin-gold hover:bg-beewin-gold/80 text-black px-5 py-3 rounded-lg text-lg font-medium transition-colors mt-4 text-center"
