@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
@@ -35,15 +36,30 @@ const Navbar = () => {
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          {["首页", "服务", "关于我们", "联系我们"].map((item, index) => (
-            <a
-              key={index}
-              href={`#${item === "首页" ? "hero" : item}`}
-              className="text-gray-800 hover:text-beewin-gold transition-colors text-sm font-medium relative py-2 px-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-beewin-gold after:transition-all hover:after:w-full"
-            >
-              {item}
-            </a>
-          ))}
+          {["首页", "服务", "关于我们", "联系我们", "轨迹跟踪"].map((item, index) => {
+            // Special case for Track link
+            if (item === "轨迹跟踪") {
+              return (
+                <a
+                  key={index}
+                  href="/track.html"
+                  className="text-gray-800 hover:text-beewin-gold transition-colors text-sm font-medium relative py-2 px-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-beewin-gold after:transition-all hover:after:w-full"
+                >
+                  {item}
+                </a>
+              );
+            }
+            
+            return (
+              <a
+                key={index}
+                href={`#${item === "首页" ? "hero" : item}`}
+                className="text-gray-800 hover:text-beewin-gold transition-colors text-sm font-medium relative py-2 px-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-beewin-gold after:transition-all hover:after:w-full"
+              >
+                {item}
+              </a>
+            );
+          })}
           <a
             href="#contact"
             className="bg-beewin-gold hover:bg-beewin-gold/80 text-black px-5 py-2 rounded-lg text-sm font-medium transition-colors"
@@ -84,16 +100,32 @@ const Navbar = () => {
             </div>
             
             <nav className="flex flex-col gap-6">
-              {["首页", "服务", "关于我们", "联系我们"].map((item, index) => (
-                <a
-                  key={index}
-                  href={`#${item === "首页" ? "hero" : item}`}
-                  className="text-gray-800 hover:text-beewin-gold transition-colors text-lg font-medium"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item}
-                </a>
-              ))}
+              {["首页", "服务", "关于我们", "联系我们", "轨迹跟踪"].map((item, index) => {
+                // Special case for Track link
+                if (item === "轨迹跟踪") {
+                  return (
+                    <a
+                      key={index}
+                      href="/track.html"
+                      className="text-gray-800 hover:text-beewin-gold transition-colors text-lg font-medium"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {item}
+                    </a>
+                  );
+                }
+                
+                return (
+                  <a
+                    key={index}
+                    href={`#${item === "首页" ? "hero" : item}`}
+                    className="text-gray-800 hover:text-beewin-gold transition-colors text-lg font-medium"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item}
+                  </a>
+                );
+              })}
               <a
                 href="#contact"
                 className="bg-beewin-gold hover:bg-beewin-gold/80 text-black px-5 py-3 rounded-lg text-lg font-medium transition-colors mt-4 text-center"
