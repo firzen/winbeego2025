@@ -1,8 +1,344 @@
 
-同样在 track.html 中替换 logo 图片的 src 属性：
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>轨迹跟踪 - 翼蜂行物流</title>
+    <meta name="description" content="翼蜂行轨迹跟踪系统，实时监控您的货物位置" />
 
-将
-`src="https://raw.githubusercontent.com/lovableio/static-company-website/main/public/lovable-uploads/2d9e3aa8-89db-4cfc-aef8-25ae2a469f3d.png"`
+    <!-- 引入 Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 添加字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- 引入自定义 CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- 配置 Tailwind -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'beewin-gold': 'hsl(45, 100%, 60%)',
+              'logistics-50': '#f7f9fc',
+              'logistics-100': '#eef1f7',
+              'logistics-200': '#d8e0ee',
+              'logistics-300': '#b9c5e0',
+              'logistics-600': '#4361aa',
+              'logistics-700': '#345091',
+              'logistics-800': '#24376a'
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Lucide 图标 -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
 
-替换为：
-`src="/lovable-uploads/2d9e3aa8-89db-4cfc-aef8-25ae2a469f3d.png"`
+  <body class="bg-white text-foreground antialiased overflow-x-hidden scroll-smooth">
+    <!-- 导航栏 -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full py-5 bg-white shadow-md">
+      <div class="container px-4 mx-auto flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2 text-black transition-opacity hover:opacity-80">
+          <img src="https://raw.githubusercontent.com/lovableio/static-company-website/main/public/lovable-uploads/2d9e3aa8-89db-4cfc-aef8-25ae2a469f3d.png" alt="翼蜂行 Logo" class="h-10" />
+          <span class="font-bold text-xl">翼蜂行</span>
+        </a>
+        
+        <!-- 桌面导航 -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-gray-800 hover:text-beewin-gold transition-colors text-sm font-medium relative py-2 px-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-beewin-gold after:transition-all hover:after:w-full">首页</a>
+          <a href="index.html#服务" class="text-gray-800 hover:text-beewin-gold transition-colors text-sm font-medium relative py-2 px-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-beewin-gold after:transition-all hover:after:w-full">服务</a>
+          <a href="index.html#关于我们" class="text-gray-800 hover:text-beewin-gold transition-colors text-sm font-medium relative py-2 px-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-beewin-gold after:transition-all hover:after:w-full">关于我们</a>
+          <a href="index.html#联系我们" class="text-gray-800 hover:text-beewin-gold transition-colors text-sm font-medium relative py-2 px-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-beewin-gold after:transition-all hover:after:w-full">联系我们</a>
+          <a href="track.html" class="text-beewin-gold hover:text-beewin-gold transition-colors text-sm font-medium relative py-2 px-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-beewin-gold after:transition-all">轨迹跟踪</a>
+          <a href="index.html#contact" class="bg-beewin-gold hover:bg-opacity-80 text-black px-5 py-2 rounded-lg text-sm font-medium transition-colors">获取报价</a>
+        </nav>
+        
+        <!-- 移动菜单按钮 -->
+        <button id="mobile-menu-button" class="md:hidden text-gray-800 p-2">
+          <i data-lucide="menu"></i>
+        </button>
+        
+        <!-- 移动导航 -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white z-50 transition-transform duration-300 translate-x-full md:hidden">
+          <div class="flex flex-col h-full p-8">
+            <div class="flex justify-between items-center mb-8">
+              <a href="index.html" class="flex items-center gap-2 text-black">
+                <img src="https://raw.githubusercontent.com/lovableio/static-company-website/main/public/lovable-uploads/2d9e3aa8-89db-4cfc-aef8-25ae2a469f3d.png" alt="翼蜂行 Logo" class="h-10" />
+                <span class="font-bold text-xl">翼蜂行</span>
+              </a>
+              <button id="close-menu-button" class="text-gray-800 p-2">
+                <i data-lucide="x"></i>
+              </button>
+            </div>
+            
+            <nav class="flex flex-col gap-6">
+              <a href="index.html" class="text-gray-800 hover:text-beewin-gold transition-colors text-lg font-medium mobile-link">首页</a>
+              <a href="index.html#服务" class="text-gray-800 hover:text-beewin-gold transition-colors text-lg font-medium mobile-link">服务</a>
+              <a href="index.html#关于我们" class="text-gray-800 hover:text-beewin-gold transition-colors text-lg font-medium mobile-link">关于我们</a>
+              <a href="index.html#联系我们" class="text-gray-800 hover:text-beewin-gold transition-colors text-lg font-medium mobile-link">联系我们</a>
+              <a href="track.html" class="text-beewin-gold hover:text-beewin-gold transition-colors text-lg font-medium mobile-link">轨迹跟踪</a>
+              <a href="index.html#contact" class="bg-beewin-gold hover:bg-opacity-80 text-black px-5 py-3 rounded-lg text-lg font-medium transition-colors mt-4 text-center mobile-link">获取报价</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 轨迹跟踪主要内容 -->
+    <section class="pt-32 pb-20 relative">
+      <div class="container px-4 mx-auto">
+        <div class="text-center mb-16">
+          <span class="px-4 py-2 bg-logistics-100 text-logistics-800 rounded-full text-sm font-medium mb-4 inline-block">
+            轨迹跟踪
+          </span>
+          <h1 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+            实时<span class="text-gradient">跟踪您的货物</span>
+          </h1>
+          <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+            输入您的运单号，即可查询最新的货物位置和运输状态。
+          </p>
+        </div>
+
+        <div class="max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+          <form id="track-form" class="space-y-6">
+            <div>
+              <label for="tracking-number" class="block text-sm font-medium text-gray-700 mb-1">
+                运单号
+              </label>
+              <div class="flex">
+                <input
+                  type="text"
+                  id="tracking-number"
+                  name="tracking-number"
+                  required
+                  class="flex-1 px-4 py-3 bg-gray-50 border border-gray-200 rounded-l-lg focus:ring-2 focus:ring-logistics-500 focus:border-logistics-500 transition-colors"
+                  placeholder="请输入您的运单号"
+                />
+                <button
+                  type="submit"
+                  class="bg-logistics-600 hover:bg-logistics-700 text-white px-6 py-3 rounded-r-lg font-medium transition-colors flex items-center"
+                >
+                  <i data-lucide="search" class="w-5 h-5 mr-2"></i>
+                  查询
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <div id="tracking-result" class="hidden mt-8 pt-6 border-t border-gray-100">
+            <div class="text-center p-8">
+              <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                <i data-lucide="package-search" class="w-12 h-12 text-logistics-600"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">暂无轨迹信息</h3>
+              <p class="text-gray-600">请确认您输入的运单号是否正确，或联系我们的客服获取帮助。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+      <div class="container px-4 mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div>
+            <div class="flex items-center gap-2 mb-5">
+              <i data-lucide="package" class="h-6 w-6"></i>
+              <span class="font-bold text-xl">翼蜂行</span>
+            </div>
+            <p class="text-gray-400 mb-6">
+              翼蜂行：专业的物流解决方案提供商，为全球客户提供高效、可靠的物流服务。
+            </p>
+            <div class="flex gap-4">
+              <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-logistics-600 hover:text-white transition-all">
+                <span class="sr-only">facebook</span>
+                <div class="w-5 h-5"></div>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-logistics-600 hover:text-white transition-all">
+                <span class="sr-only">twitter</span>
+                <div class="w-5 h-5"></div>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-logistics-600 hover:text-white transition-all">
+                <span class="sr-only">linkedin</span>
+                <div class="w-5 h-5"></div>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-logistics-600 hover:text-white transition-all">
+                <span class="sr-only">instagram</span>
+                <div class="w-5 h-5"></div>
+              </a>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="font-semibold text-lg mb-5">服务</h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="index.html#服务" class="text-gray-400 hover:text-white transition-colors">
+                  国际海运
+                </a>
+              </li>
+              <li>
+                <a href="index.html#服务" class="text-gray-400 hover:text-white transition-colors">
+                  国际空运
+                </a>
+              </li>
+              <li>
+                <a href="index.html#服务" class="text-gray-400 hover:text-white transition-colors">
+                  仓储与配送
+                </a>
+              </li>
+              <li>
+                <a href="index.html#服务" class="text-gray-400 hover:text-white transition-colors">
+                  跨境电商物流
+                </a>
+              </li>
+              <li>
+                <a href="index.html#服务" class="text-gray-400 hover:text-white transition-colors">
+                  项目物流
+                </a>
+              </li>
+              <li>
+                <a href="index.html#服务" class="text-gray-400 hover:text-white transition-colors">
+                  供应链咨询
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 class="font-semibold text-lg mb-5">关于我们</h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="index.html#关于我们" class="text-gray-400 hover:text-white transition-colors">
+                  公司介绍
+                </a>
+              </li>
+              <li>
+                <a href="index.html#关于我们" class="text-gray-400 hover:text-white transition-colors">
+                  发展历程
+                </a>
+              </li>
+              <li>
+                <a href="index.html#关于我们" class="text-gray-400 hover:text-white transition-colors">
+                  企业文化
+                </a>
+              </li>
+              <li>
+                <a href="index.html#关于我们" class="text-gray-400 hover:text-white transition-colors">
+                  核心优势
+                </a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                  新闻动态
+                </a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                  加入我们
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 class="font-semibold text-lg mb-5">联系我们</h3>
+            <ul class="space-y-3 text-gray-400">
+              <li>
+                广州市黄埔区鱼珠AI智慧港西塔B220
+              </li>
+              <li>
+                <a href="mailto:info@winbeego.com" class="hover:text-white transition-colors">
+                  info@winbeego.com
+                </a>
+              </li>
+              <li class="pt-2">
+                <div class="flex flex-col items-center bg-white p-3 rounded-lg">
+                  <img 
+                    src="https://raw.githubusercontent.com/lovableio/static-company-website/main/public/lovable-uploads/4e4b1a4b-32d2-4066-9a54-8952b1772cfd.png" 
+                    alt="WBG行李回家专家 WhatsApp 联系人" 
+                    class="w-32 h-auto"
+                  />
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-500 text-sm mb-4 md:mb-0">
+            © <span id="current-year"></span> 翼蜂行. 保留所有权利。 | winbeego.com
+          </p>
+          <div class="flex gap-6">
+            <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">
+              隐私政策
+            </a>
+            <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">
+              服务条款
+            </a>
+            <a href="index.html" class="text-gray-500 hover:text-white text-sm transition-colors">
+              返回首页
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 脚本 -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // 初始化 Lucide 图标
+        lucide.createIcons();
+        
+        // 设置当前年份
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // 移动菜单功能
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMenuButton = document.getElementById('close-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        
+        mobileMenuButton.addEventListener('click', function() {
+          mobileMenu.classList.remove('translate-x-full');
+          mobileMenu.classList.add('translate-x-0');
+        });
+        
+        closeMenuButton.addEventListener('click', function() {
+          mobileMenu.classList.remove('translate-x-0');
+          mobileMenu.classList.add('translate-x-full');
+        });
+        
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            mobileMenu.classList.remove('translate-x-0');
+            mobileMenu.classList.add('translate-x-full');
+          });
+        });
+        
+        // 轨迹查询表单
+        const trackForm = document.getElementById('track-form');
+        const trackingResult = document.getElementById('tracking-result');
+        
+        if (trackForm) {
+          trackForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 显示结果区域（暂无实际数据）
+            if (trackingResult) {
+              trackingResult.classList.remove('hidden');
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
